@@ -1,7 +1,7 @@
 ---
 title: "Lab 00 - Hello IDS!"
-author: "INSERT YOUR NAME HERE"
-date: "`r Sys.Date()`"
+author: "Lucia"
+date: "2025-09-30"
 output: html_document
 ---
 
@@ -54,7 +54,7 @@ p1
 Change the text of the plot title and axis labels.
 
 ```{r labelled-bar-plot}
-p1 + labs(x = "Insert text here", 
+p1 + labs(x = "Insert ", 
           y = "Insert text here",
           title = "Insert text here")
 ```
