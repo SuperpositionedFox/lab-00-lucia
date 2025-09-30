@@ -1,6 +1,6 @@
 ---
 title: "Lab 00 - Hello IDS!"
-author: "Lucia"
+author: "Lucia ines"
 date: "2025-09-30"
 output: html_document
 ---
@@ -17,23 +17,19 @@ We set up the data frame. Edit the data below to include information about your 
 
 ```{r setup-tibble}
 team_data <- tibble(
-  name = c("Peter Rabbit", "member 1", "member 2", 
-           "member 3", "member 4"),
-  github_username = c("mcgregors-garden", "username 1", "username 2", 
-                      "username 3", "username 4"), 
-  colour = c("powderblue", "colour 1", "colour 2", 
-             "colour 3", "colour 4"),
-  hobby = c("Hopping", "hobby 1", "hobby 2", 
-            "hobby 3", "hobby 4"),
-  favourite_number = c(2, NA, NA, NA, NA)
-  )
+  name = c("Bonnie", "Caroline", "Klaus", "Lucia", "Lisa", "jeremy"),
+  github_username = c("bonnie123", "caroC", "klausk", "luciafox", "lisalisa", "jeremy"),
+  colour = c("blue", "red", "yellow", "pink", "violet", "green"),
+  hobby = c("painting", "reading", "football", "reading", "knitting", "football"),
+  favourite_number = c(7, 13, 3, 5, 11, 8)
+)
 
 team_data
 ```
 
 ### Exercise 18
 
-We now work on visualising our data. 
+We now work on visualising our data.
 
 ```{r bar-plot}
 p1 <- ggplot(data = team_data, 
@@ -46,20 +42,19 @@ p1 <- ggplot(data = team_data,
 p1
 ```
 
-
-*Remove this text (including the stars), and add your answer for Exercise 18 here.*
+The plot shows a bar chart where each bar represents a team member (using their GitHub username). The height of the bar shows their favourite number.  The colour of each bar comes from the “colour” variable in the dataset.
 
 ### Exercises 19
 
 Change the text of the plot title and axis labels.
 
 ```{r labelled-bar-plot}
-p1 + labs(x = "Insert ", 
-          y = "Insert text here",
-          title = "Insert text here")
+p1 + labs(x = "Username ", 
+          y = "Favourite Number",
+          title = "Team Data")
 ```
 
-*Remove this text (including the stars), and add your answer for Exercise 19 here.*
+The labs() function in ggplot2 is used to change the text labels in a plot. This includes the title of the plot, the x-axis label, the y-axis label, and sometimes legends. In this case, l chose tThe x-axis to say "username", y-axis to say "favourite number" and the title of the plot to "team data".
 
 ### Exercise 20
 
@@ -69,4 +64,4 @@ p2 <- ggplot(team_data, aes(x = hobby)) +
 p2
 ```
 
-*Remove this text (including the stars) and add your answer for Exercise 20 here.*
+Because if every person in the team has a different hobby, the bar chart will just show one bar per person. That doesn’t help us compare or find patterns — it's just a list. There’s no grouping or shared data to summarise. If lots of people had the same hobby, then the bar chart would show us which hobbies are more or less popular. A table might be better in this case. A table lets you list each team member and their hobby clearly, without pretending there’s a useful pattern. Another option might be a pie chart if hobbies were grouped or summarised, but only if some hobbies were shared by multiple people.
